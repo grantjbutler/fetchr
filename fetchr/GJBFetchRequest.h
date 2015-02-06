@@ -10,9 +10,12 @@
 @import JavaScriptCore;
 @import CoreData;
 
+@class GJBPredicate;
+
 @protocol GJBFetchRequest <JSExport>
 
 @property (nonatomic, copy) NSString *entityName;
+@property (nonatomic) GJBPredicate *predicate;
 
 @end
 

@@ -15,6 +15,7 @@
 @implementation GJBFetchRequest
 
 @synthesize entityName = _entityName;
+@synthesize predicate = _predicate;
 
 - (NSFetchRequest *)fetchRequest {
 	NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
