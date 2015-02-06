@@ -17,6 +17,23 @@
 
 @implementation GJBPredicate
 
++ (instancetype)format {
+	NSArray *arguments = [JSContext currentArguments];
+	if (arguments.count == 0) {
+		// TODO: Throw an error? Maybe?
+		return nil;
+	}
+	
+	NSString *format = [arguments[0] toString];
+	NSArray *formatArguments;
+	
+	if (arguments.count > 1) {
+		formatArguments = [[arguments subarrayWithRange:NSMakeRange(1, arguments.count - 1)] valueForKey:NSStringFromSelector(@selector(toObject))];
+	}
+	
+	return [[GJBPredicate alloc] initWithFormat:format arguments:formatArguments];
+}
+
 - (instancetype)initWithFormat:(NSString *)format arguments:(NSArray *)arguments {
 	self = [super init];
 	if (self) {

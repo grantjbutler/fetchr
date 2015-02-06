@@ -11,6 +11,8 @@
 
 @protocol GJBPredicate <JSExport>
 
++ (instancetype)format;
+
 @end
 
 @interface GJBPredicate : NSObject <GJBPredicate>
