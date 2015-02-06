@@ -13,6 +13,7 @@
 
 #import "GJBPersistenceController.h"
 #import "GJBFetchRequest.h"
+#import "GJBPredicate.h"
 #import "GJBFetchr.h"
 
 #import "NSURL+GJBAdditions.h"
@@ -226,6 +227,7 @@
 	self.javaScriptContext[className] = ^{ return [[GJBFetchRequest alloc] init]; };
 	[self.javaScriptContext evaluateScript:[NSString stringWithFormat:@"var FetchRequest = function (){ return %@();};", className]];
 	
+	self.javaScriptContext[@"Predicate"] = [GJBPredicate class];
 	self.javaScriptContext[@"exit"] = ^{
 		isDone = YES;
 	};
