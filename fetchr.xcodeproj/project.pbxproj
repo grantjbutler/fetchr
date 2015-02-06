@@ -18,6 +18,7 @@
 		C3D3DF991A832F730016CECA /* GJBFetchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D3DF981A832F730016CECA /* GJBFetchRequest.m */; };
 		C3D3DF9C1A8330850016CECA /* GJBFetchr.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D3DF9B1A8330850016CECA /* GJBFetchr.m */; };
 		C3D3DF9F1A8334320016CECA /* NSURL+GJBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D3DF9E1A8334320016CECA /* NSURL+GJBAdditions.m */; };
+		C3D3DFA21A84449A0016CECA /* GJBPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D3DFA11A84449A0016CECA /* GJBPredicate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,8 @@
 		C3D3DF9B1A8330850016CECA /* GJBFetchr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJBFetchr.m; sourceTree = "<group>"; };
 		C3D3DF9D1A8334320016CECA /* NSURL+GJBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+GJBAdditions.h"; sourceTree = "<group>"; };
 		C3D3DF9E1A8334320016CECA /* NSURL+GJBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+GJBAdditions.m"; sourceTree = "<group>"; };
+		C3D3DFA01A84449A0016CECA /* GJBPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJBPredicate.h; sourceTree = "<group>"; };
+		C3D3DFA11A84449A0016CECA /* GJBPredicate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJBPredicate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				C3D3DF951A832C9C0016CECA /* GJBPersistenceController.m */,
 				C3D3DF971A832F730016CECA /* GJBFetchRequest.h */,
 				C3D3DF981A832F730016CECA /* GJBFetchRequest.m */,
+				C3D3DFA01A84449A0016CECA /* GJBPredicate.h */,
+				C3D3DFA11A84449A0016CECA /* GJBPredicate.m */,
 				C3D3DF9A1A8330850016CECA /* GJBFetchr.h */,
 				C3D3DF9B1A8330850016CECA /* GJBFetchr.m */,
 				C3D3DF9D1A8334320016CECA /* NSURL+GJBAdditions.h */,
@@ -185,6 +190,7 @@
 				C3D3DF8C1A8329810016CECA /* DDCliApplication.m in Sources */,
 				C3D3DF9C1A8330850016CECA /* GJBFetchr.m in Sources */,
 				C3D3DF8E1A8329810016CECA /* DDGetoptLongParser.m in Sources */,
+				C3D3DFA21A84449A0016CECA /* GJBPredicate.m in Sources */,
 				C3D3DF991A832F730016CECA /* GJBFetchRequest.m in Sources */,
 				C3D3DF9F1A8334320016CECA /* NSURL+GJBAdditions.m in Sources */,
 			);
