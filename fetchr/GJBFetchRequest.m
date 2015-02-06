@@ -7,6 +7,7 @@
 //
 
 #import "GJBFetchRequest.h"
+#import "GJBPredicate.h"
 
 @interface GJBFetchRequest ()
 
@@ -20,7 +21,7 @@
 - (NSFetchRequest *)fetchRequest {
 	NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
 	
-	
+	fetchRequest.predicate = self.predicate.predicate;
 	
 	return fetchRequest;
 }
