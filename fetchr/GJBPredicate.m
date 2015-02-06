@@ -43,4 +43,8 @@
 	return self;
 }
 
+- (NSPredicate *)predicate {
+	return [NSPredicate predicateWithFormat:self.format argumentArray:self.arguments];
+}
+
 @end

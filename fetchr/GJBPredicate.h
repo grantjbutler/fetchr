@@ -17,4 +17,6 @@
 
 @interface GJBPredicate : NSObject <GJBPredicate>
 
+@property (nonatomic, readonly) NSPredicate *predicate;
+
 @end
