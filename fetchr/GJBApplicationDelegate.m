@@ -219,7 +219,13 @@
 	
 	self.javaScriptContext = [[JSContext alloc] init];
 	self.javaScriptContext[@"fetchr"] = [[GJBFetchr alloc] initWithPersistenceController:self.persistenceController];
-	self.javaScriptContext[@"FetchRequest"] = [GJBFetchRequest class];
+	
+	// Fix for constructors from the Apple Dev Forums
+	// https://devforums.apple.com/message/918819#918819
+	NSString *className = NSStringFromClass([GJBFetchRequest class]);
+	self.javaScriptContext[className] = ^{ return [[GJBFetchRequest alloc] init]; };
+	[self.javaScriptContext evaluateScript:[NSString stringWithFormat:@"var FetchRequest = function (){ return %@();};", className]];
+	
 	self.javaScriptContext[@"exit"] = ^{
 		isDone = YES;
 	};
