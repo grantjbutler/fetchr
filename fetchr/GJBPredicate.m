@@ -8,6 +8,22 @@
 
 #import "GJBPredicate.h"
 
+@interface GJBPredicate ()
+
+@property (nonatomic) NSString *format;
+@property (nonatomic) NSArray *arguments;
+
+@end
+
 @implementation GJBPredicate
+
+- (instancetype)initWithFormat:(NSString *)format arguments:(NSArray *)arguments {
+	self = [super init];
+	if (self) {
+		_format = format;
+		_arguments = arguments;
+	}
+	return self;
+}
 
 @end
