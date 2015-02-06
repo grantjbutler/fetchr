@@ -14,7 +14,7 @@
 
 @protocol GJBFetchr <JSExport>
 
-- (void)executeFetchRequest:(GJBFetchRequest *)fetchRequest;
+- (NSArray *)executeFetchRequest:(GJBFetchRequest *)fetchRequest;
 
 @end
 

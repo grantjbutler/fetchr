@@ -29,17 +29,17 @@
 	return self;
 }
 
-- (void)executeFetchRequest:(GJBFetchRequest *)fetchRequest {
+- (NSArray *)executeFetchRequest:(GJBFetchRequest *)fetchRequest {
 	NSFetchRequest *actualFetchRequest = fetchRequest.fetchRequest;
 	actualFetchRequest.resultType = NSDictionaryResultType;
 	
 	NSError *fetchError;
 	NSArray *results = [self.persistenceController.context executeFetchRequest:actualFetchRequest error:&fetchError];
 	if (!results.count) {
-		
+		return nil;
 	}
 	else {
-		
+		return results;
 	}
 }
 
