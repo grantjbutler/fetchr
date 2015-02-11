@@ -8,6 +8,13 @@
 
 #import "GJBSortDescriptor.h"
 
+@interface GJBSortDescriptor ()
+
+@property (nonatomic, copy) NSString *key;
+@property (nonatomic) BOOL ascending;
+
+@end
+
 @implementation GJBSortDescriptor
 
 @end
