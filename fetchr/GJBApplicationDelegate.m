@@ -14,6 +14,7 @@
 #import "GJBPersistenceController.h"
 #import "GJBFetchRequest.h"
 #import "GJBPredicate.h"
+#import "GJBSortDescriptor.h"
 #import "GJBFetchr.h"
 
 #import "NSURL+GJBAdditions.h"
@@ -233,6 +234,7 @@
 	self.javaScriptContext[@"fetchr"] = [[GJBFetchr alloc] initWithPersistenceController:self.persistenceController];
 	
 	[self registerConstructorForClass:[GJBFetchRequest class] inContext:self.javaScriptContext];
+    [self registerConstructorForClass:[GJBSortDescriptor class] inContext:self.javaScriptContext];
 	
 	self.javaScriptContext[@"Predicate"] = [GJBPredicate class];
 	self.javaScriptContext[@"exit"] = ^{
