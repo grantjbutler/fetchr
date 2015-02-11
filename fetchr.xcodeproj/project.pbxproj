@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		326D6D071A8BA53C00919583 /* GJBSortDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D6D061A8BA53C00919583 /* GJBSortDescriptor.m */; };
 		C3D3DF7B1A8328950016CECA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D3DF7A1A8328950016CECA /* main.m */; };
 		C3D3DF8C1A8329810016CECA /* DDCliApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D3DF841A8329810016CECA /* DDCliApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C3D3DF8D1A8329810016CECA /* DDCliUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D3DF861A8329810016CECA /* DDCliUtil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -34,6 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		326D6D051A8BA53C00919583 /* GJBSortDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJBSortDescriptor.h; sourceTree = "<group>"; };
+		326D6D061A8BA53C00919583 /* GJBSortDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJBSortDescriptor.m; sourceTree = "<group>"; };
 		C3D3DF771A8328950016CECA /* fetchr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fetchr; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D3DF7A1A8328950016CECA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C3D3DF821A8329810016CECA /* DDCommandLineInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCommandLineInterface.h; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				C3D3DF981A832F730016CECA /* GJBFetchRequest.m */,
 				C3D3DFA01A84449A0016CECA /* GJBPredicate.h */,
 				C3D3DFA11A84449A0016CECA /* GJBPredicate.m */,
+				326D6D051A8BA53C00919583 /* GJBSortDescriptor.h */,
+				326D6D061A8BA53C00919583 /* GJBSortDescriptor.m */,
 				C3D3DF9A1A8330850016CECA /* GJBFetchr.h */,
 				C3D3DF9B1A8330850016CECA /* GJBFetchr.m */,
 				C3D3DF9D1A8334320016CECA /* NSURL+GJBAdditions.h */,
@@ -193,6 +198,7 @@
 				C3D3DFA21A84449A0016CECA /* GJBPredicate.m in Sources */,
 				C3D3DF991A832F730016CECA /* GJBFetchRequest.m in Sources */,
 				C3D3DF9F1A8334320016CECA /* NSURL+GJBAdditions.m in Sources */,
+				326D6D071A8BA53C00919583 /* GJBSortDescriptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +314,7 @@
 				C3D3DF801A8328950016CECA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
