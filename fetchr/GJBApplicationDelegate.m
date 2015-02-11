@@ -62,6 +62,17 @@
 	return nil;
 }
 
+- (void)registerConstructorForClass:(Class)klass inContext:(JSContext *)context {
+    // Fix for constructors from the Apple Dev Forums
+	// https://devforums.apple.com/message/918819#918819
+    NSString *className = NSStringFromClass(klass);
+    NSRange classPrefixRange = [className rangeOfCharacterFromSet:[NSCharacterSet lowercaseLetterCharacterSet]];
+    NSString *unprefixedClassName = [className substringFromIndex:classPrefixRange.location - 1];
+    
+	self.javaScriptContext[className] = ^{ return [[klass alloc] init]; };
+	[self.javaScriptContext evaluateScript:[NSString stringWithFormat:@"var %@ = function (){ return %@();};", unprefixedClassName, className]];
+}
+
 // BEGIN METHOD TAKEN FROM mogenerator
 - (NSString*)xcodeSelectPrintPath {
 	NSString *result = @"";
@@ -221,11 +232,7 @@
 	self.javaScriptContext = [[JSContext alloc] init];
 	self.javaScriptContext[@"fetchr"] = [[GJBFetchr alloc] initWithPersistenceController:self.persistenceController];
 	
-	// Fix for constructors from the Apple Dev Forums
-	// https://devforums.apple.com/message/918819#918819
-	NSString *className = NSStringFromClass([GJBFetchRequest class]);
-	self.javaScriptContext[className] = ^{ return [[GJBFetchRequest alloc] init]; };
-	[self.javaScriptContext evaluateScript:[NSString stringWithFormat:@"var FetchRequest = function (){ return %@();};", className]];
+	[self registerConstructorForClass:[GJBFetchRequest class] inContext:self.javaScriptContext];
 	
 	self.javaScriptContext[@"Predicate"] = [GJBPredicate class];
 	self.javaScriptContext[@"exit"] = ^{
