@@ -10,4 +10,6 @@
 
 @interface GJBSortDescriptor : NSObject
 
+- (instancetype)initWithKey:(NSString *)key ascending:(BOOL)ascending;
+
 @end

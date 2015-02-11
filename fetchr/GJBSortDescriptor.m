@@ -17,4 +17,13 @@
 
 @implementation GJBSortDescriptor
 
+- (instancetype)initWithKey:(NSString *)key ascending:(BOOL)ascending {
+    self = [super init];
+    if (self) {
+        _key = [key copy];
+        _ascending = ascending;
+    }
+    return self;
+}
+
 @end
