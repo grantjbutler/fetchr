@@ -7,8 +7,16 @@
 //
 
 @import Foundation;
+@import JavaScriptCore;
 
-@interface GJBSortDescriptor : NSObject
+@protocol GJBSortDescriptor <JSExport>
+
+JSExportAs(init,
+- (instancetype)initWithKey:(NSString *)key ascending:(BOOL)ascending);
+
+@end
+
+@interface GJBSortDescriptor : NSObject <GJBSortDescriptor>
 
 - (instancetype)initWithKey:(NSString *)key ascending:(BOOL)ascending;
 
