@@ -8,6 +8,7 @@
 
 #import "GJBFetchRequest.h"
 #import "GJBPredicate.h"
+#import "GJBSortDescriptor.h"
 
 @interface GJBFetchRequest ()
 
@@ -17,11 +18,13 @@
 
 @synthesize entityName = _entityName;
 @synthesize predicate = _predicate;
+@synthesize sortDescriptors = _sortDescriptors;
 
 - (NSFetchRequest *)fetchRequest {
 	NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:self.entityName];
 	
 	fetchRequest.predicate = self.predicate.predicate;
+    fetchRequest.sortDescriptors = [self.sortDescriptors valueForKey:NSStringFromSelector(@selector(sortDescriptor))];
 	
 	return fetchRequest;
 }

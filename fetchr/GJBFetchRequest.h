@@ -16,6 +16,7 @@
 
 @property (nonatomic, copy) NSString *entityName;
 @property (nonatomic) GJBPredicate *predicate;
+@property (nonatomic) NSArray *sortDescriptors;
 
 @end
 
