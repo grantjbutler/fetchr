@@ -26,4 +26,8 @@
     return self;
 }
 
+- (NSSortDescriptor *)sortDescriptor {
+    return [NSSortDescriptor sortDescriptorWithKey:self.key ascending:self.ascending];
+}
+
 @end

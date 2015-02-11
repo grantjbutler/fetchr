@@ -18,6 +18,8 @@ JSExportAs(init,
 
 @interface GJBSortDescriptor : NSObject <GJBSortDescriptor>
 
+@property (nonatomic, readonly) NSSortDescriptor *sortDescriptor;
+
 - (instancetype)initWithKey:(NSString *)key ascending:(BOOL)ascending;
 
 @end
