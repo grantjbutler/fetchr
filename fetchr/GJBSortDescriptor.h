@@ -11,8 +11,7 @@
 
 @protocol GJBSortDescriptor <JSExport>
 
-JSExportAs(init,
-- (instancetype)initWithKey:(NSString *)key ascending:(BOOL)ascending);
+- (instancetype)init;
 
 @end
 

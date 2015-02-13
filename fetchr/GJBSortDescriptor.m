@@ -17,6 +17,24 @@
 
 @implementation GJBSortDescriptor
 
+- (instancetype)init {
+    NSString *key;
+    BOOL ascending;
+    
+    NSArray *args = [JSContext currentArguments];
+    if (args) {
+        if (args.count >= 1) {
+            key = [args[0] toString];
+            
+            if (args.count >= 2) {
+                ascending = [args[1] toBool];
+            }
+        }
+    }
+    
+    return [self initWithKey:key ascending:ascending];
+}
+
 - (instancetype)initWithKey:(NSString *)key ascending:(BOOL)ascending {
     self = [super init];
     if (self) {
