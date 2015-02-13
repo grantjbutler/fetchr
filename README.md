@@ -17,7 +17,17 @@ Creates a predicate with the specified format. The method mirrors `+[NSPredicate
 
 ```js
 var sign = isAdult ? '>=' : '<';
-Predicate.format('age %@ 18', sign);
+Predicate.format('%K %@ 18', 'age', sign);
+```
+
+### SortDescriptor
+
+#### Constructor
+
+The constructor mirrors the initializer for `NSSortDescriptor`. It takes two arguments, the name of the key to sort by, and whether the sort should be ascending (`true`) or descending (`false`).
+
+```js
+var sortDescriptor = new SortDescriptor('name', true);
 ```
 
 ### FetchRequest
@@ -33,14 +43,35 @@ var request = new FetchRequest();
 request.entityName = 'Person';
 ```
 
-#### `predicate`
+##### `predicate`
 
 A `Predicate` instance for filtering objects from a Core Data store.
 
 ```js
 var request = new FetchRequest();
 request.entityName = 'Person';
-request.predicate = Predicate.format('age >= 18');
+request.predicate = Predicate.format('%K >= 18', 'age');
+```
+
+##### `sortDescriptors`
+
+An array of `SortDescriptor` instances to sort the fetch request by.
+
+```js
+var request = new FetchRequest();
+request.entityName = 'Person';
+request.sortDescriptors = [new SortDescriptor('name', true)];
+```
+
+##### `relationshipKeyPathsForPrefetching`
+
+An array of strings that are key paths of relationships to fetch.
+
+```js
+var request = new FetchRequest();
+request.entityName = 'Person';
+request.predicate = Predicate.format('%K.@count >= 3', 'relatives');
+request.relationshipKeyPathsForPrefetching = ['relatives'];
 ```
 
 ### fetchr
@@ -54,6 +85,6 @@ Executes a `FetchRequest` against a Core Data store, and returns the results, if
 ```js
 var request = new FetchRequest();
 request.entityName = 'Person';
-request.predicate = Predicate.format('age >= 18');
+request.predicate = Predicate.format('%K >= 18', 'age');
 var results = fetchr.executeFetchRequest(request);
 ```
