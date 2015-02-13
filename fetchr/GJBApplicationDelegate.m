@@ -259,11 +259,13 @@
 		add_history(input);
 		
 		NSString *javaScriptSource = [NSString stringWithUTF8String:input];
-		JSValue *result = [self.javaScriptContext evaluateScript:javaScriptSource];
-		id resultObject = [result toObject];
-		if (resultObject) {
-			ddprintf(@"%@\n", resultObject);
-		}
+        if (javaScriptSource.length) {
+            JSValue *result = [self.javaScriptContext evaluateScript:javaScriptSource];
+            id resultObject = [result toObject];
+            if (resultObject) {
+                ddprintf(@"%@\n", resultObject);
+            }
+        }
 		
 		free(input);
 	} while (!isDone);
