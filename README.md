@@ -3,7 +3,7 @@
 
 ## Status
 
-`fetchr` is in a basic usable state. You can create a fetch request, assign an entity to it, assign a predicate, and then execute it to get results. Things that still need to be implemented include setting a fetch limit, setting sort descriptors, setting relationship paths for prefetching, setting which properties to fetch, and setting properties to group by.
+`fetchr` is in a basic usable state. You can create a fetch request, assign an entity to it, assign a predicate, set sort descriptors, set relationship paths for prefetching, and then execute it to get results. Things that still need to be implemented include setting a fetch limit, setting which properties to fetch, and setting properties to group by.
 
 ## API
 
