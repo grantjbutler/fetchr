@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSString *entityName;
 @property (nonatomic) GJBPredicate *predicate;
 @property (nonatomic) NSArray *sortDescriptors;
+@property (nonatomic) NSArray *relationshipKeyPathsForPrefetching;
 
 @end
 
