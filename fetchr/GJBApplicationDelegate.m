@@ -71,7 +71,7 @@
     NSString *unprefixedClassName = [className substringFromIndex:classPrefixRange.location - 1];
     
 	self.javaScriptContext[className] = ^{ return [[klass alloc] init]; };
-	[self.javaScriptContext evaluateScript:[NSString stringWithFormat:@"var %@ = function (){ return %@();};", unprefixedClassName, className]];
+	[self.javaScriptContext evaluateScript:[NSString stringWithFormat:@"var %@ = function (){ var args = Array.prototype.slice.call(arguments); return %@.apply(null, args);};", unprefixedClassName, className]];
 }
 
 // BEGIN METHOD TAKEN FROM mogenerator
